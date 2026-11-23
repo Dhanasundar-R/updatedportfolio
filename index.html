@@ -328,7 +328,6 @@
                 id="enquiry-type"
                 class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-neutral-50 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition"
               >
-                <option value="Job Opportunity / Recruitment">Job Opportunity / Recruitment</option>
                 <option value="Mechanical Design / CAD Project">Mechanical Design / CAD Project</option>
                 <option value="Internship / Mentorship">Internship / Mentorship</option>
                 <option value="General Enquiry">General Enquiry</option>
@@ -377,15 +376,15 @@
   <!-- ===================================================================== -->
   <!-- FOOTER                                                                -->
   <!-- ===================================================================== -->
-  <footer class="border-t-2 border-black bg-neutral-50 py-8">
+<footer class="border-t-2 border-black bg-neutral-50 py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-600">
       <p>&copy; <span id="footer-year"></span> <span id="footer-name" class="text-black font-semibold">DHANASUNDAR.R</span>. ALL RIGHTS RESERVED.</p>
       <div class="flex flex-wrap items-center gap-4 print:hidden">
         <a id="footer-linkedin" href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer" class="underline hover:text-black transition">
           LinkedIn &#8599;
         </a>
-        <button onclick="window.print()" class="underline hover:text-black transition">
-          Print / Save PDF
+        <button onclick="printResumePdf()" class="underline hover:text-black transition">
+          Print Resume (PDF)
         </button>
         <button onclick="downloadEditableHtml()" class="underline hover:text-black transition">
           Download Editable index.html
