@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DHANASUNDAR.R | Mechanical Design Engineer</title>
+  <title>DHANASUNDAR | Mechanical Design Engineer</title>
   <!-- Google Fonts: Inter & JetBrains Mono for technical CAD aesthetic -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,13 +59,16 @@
           <span>LinkedIn</span>
           <span aria-hidden="true">&#8599;</span>
         </a>
-        <button
-          onclick="window.print()"
-          title="Save or Print as PDF Resume"
-          class="px-3 py-1.5 rounded-md border border-black text-xs font-mono uppercase tracking-wider hover:bg-black hover:text-white transition"
+        <a
+          id="nav-resume"
+          href="MECHANICAL ENGINEER RESUME - DHANA SUNDAR.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Open or Download PDF Resume"
+          class="px-3 py-1.5 rounded-md border border-black bg-black text-white text-xs font-mono uppercase tracking-wider hover:bg-neutral-800 transition"
         >
-          Print / PDF
-        </button>
+          Resume PDF &#8599;
+        </a>
         <button
           id="mobile-menu-btn"
           aria-label="Toggle Menu"
@@ -87,6 +90,7 @@
       <a href="#education" class="block py-1.5 hover:text-neutral-500">05. Education</a>
       <a href="#contact" class="block py-1.5 hover:text-neutral-500">06. Contact &amp; Enquiry</a>
       <a id="mobile-linkedin" href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer" class="block py-1.5 font-semibold text-black">07. LinkedIn Profile &#8599;</a>
+      <a id="mobile-resume" href="MECHANICAL ENGINEER RESUME - DHANA SUNDAR.pdf" target="_blank" rel="noopener noreferrer" download="DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf" class="block py-1.5 font-semibold text-black">08. Download Resume PDF &darr;</a>
     </div>
   </header>
 
@@ -115,7 +119,7 @@
         </p>
 
         <h1 id="hero-name" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase text-black mb-6">
-          DHANASUNDAR.R
+          DHANASUNDAR
         </h1>
 
         <div class="max-w-3xl">
@@ -146,6 +150,14 @@
             class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-black hover:text-white transition"
           >
             LinkedIn Profile &#8599;
+          </a>
+          <a
+            id="hero-resume"
+            href="MECHANICAL ENGINEER RESUME - DHANA SUNDAR.pdf"
+            download="DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf"
+            class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-black hover:text-white transition"
+          >
+            Download Resume (PDF) &darr;
           </a>
           <button
             onclick="copyEmailToClipboard()"
@@ -243,7 +255,7 @@
           <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight uppercase mt-1">Contact &amp; Enquiry</h2>
         </div>
         <p class="font-mono text-xs uppercase tracking-wider text-neutral-600">
-          SIVAGANGAI, TAMIL NADU
+          DIRECT RESPONSE CHANNEL // SIVAGANGAI, TAMIL NADU
         </p>
       </div>
 
@@ -328,6 +340,7 @@
                 id="enquiry-type"
                 class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-neutral-50 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition"
               >
+                <option value="Job Opportunity / Recruitment">Job Opportunity / Recruitment</option>
                 <option value="Mechanical Design / CAD Project">Mechanical Design / CAD Project</option>
                 <option value="Internship / Mentorship">Internship / Mentorship</option>
                 <option value="General Enquiry">General Enquiry</option>
@@ -376,7 +389,7 @@
   <!-- ===================================================================== -->
   <!-- FOOTER                                                                -->
   <!-- ===================================================================== -->
-<footer class="border-t-2 border-black bg-neutral-50 py-8">
+  <footer class="border-t-2 border-black bg-neutral-50 py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-600">
       <p>&copy; <span id="footer-year"></span> <span id="footer-name" class="text-black font-semibold">DHANASUNDAR.R</span>. ALL RIGHTS RESERVED.</p>
       <div class="flex flex-wrap items-center gap-4 print:hidden">
@@ -464,13 +477,15 @@
           "Entry-level Mechanical Design Engineer with basic knowledge of SolidWorks and AutoCAD, eager to learn, contribute to design projects, and grow in a professional engineering environment.",
       },
 
-      // 2. CONTACT & LINKEDIN DETAILS (Edit your LinkedIn URL right below!)
+      // 2. CONTACT, LINKEDIN & RESUME FILE DETAILS (Edit your LinkedIn URL & PDF path below!)
       contact: {
         address: "15, North New Street, Manamadurai, Sivagangai",
         phone: "+91 9092055547",
-        email: "dhanasundarcore@gmail.com",
-        linkedinUrl: "https://www.linkedin.com/in/dhana-sundar-r-86b829401/",
-        linkedinLabel: "EXPLORE MY WORKS",
+        email: "dhanasundar01@gmail.com",
+        linkedinUrl: "https://www.linkedin.com/in/your-linkedin-id",
+        linkedinLabel: "linkedin.com/in/your-linkedin-id",
+        resumeFile: "MECHANICAL ENGINEER RESUME - DHANA SUNDAR.pdf",
+        resumeDownloadName: "DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf",
       },
 
       // 3. PROJECTS SHOWCASE
@@ -528,15 +543,6 @@
             "Learned multiple details on designing types and tool usage.",
           ],
         },
-          {
-          role: "AutoCAD Designer",
-          duration: "JAN 2023 - 10 DAYS",
-          organization: "Industrial CAD Training / Internship",
-          responsibilities: [
-            "Conducted day-to-day project coordination, planning, and implementation across multiple teams.",
-            "Learned multiple details on designing types and tool usage.",
-          ],
-        },
         {
           role: "SolidWorks Designer",
           duration: "JULY 2024 - 10 DAYS",
@@ -580,17 +586,16 @@
           institution: "Hindusthan College of Engineering and Technology",
           tag: "UNDERGRADUATE",
         },
-         {
-          degree: "SSLC ",
+        {
+          degree: "HSC (Higher Secondary Certificate)",
           institution: "Seventh Day Adventist Matric Higher Secondary School",
-          tag: "APRIL 2019",
+          tag: "HIGHER SECONDARY",
         },
         {
-          degree: "HSC",
+          degree: "SSLC (Secondary School Leaving Certificate)",
           institution: "Seventh Day Adventist Matric Higher Secondary School",
-          tag: "APRIL 2021",
+          tag: "SECONDARY SCHOOL",
         },
-       
       ],
     };
 
@@ -614,6 +619,16 @@
       });
       const linkedinLabelEl = document.getElementById("contact-linkedin-label");
       if (linkedinLabelEl) linkedinLabelEl.textContent = linkedinLabel;
+
+      // Wire PDF Resume Links
+      const resumeFile = PORTFOLIO_DATA.contact.resumeFile;
+      const resumeDownloadName = PORTFOLIO_DATA.contact.resumeDownloadName;
+      ["nav-resume", "hero-resume"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.href = resumeFile;
+      });
+      const heroResumeEl = document.getElementById("hero-resume");
+      if (heroResumeEl) heroResumeEl.setAttribute("download", resumeDownloadName);
 
       const targetEmailEl = document.getElementById("enquiry-target-email");
       if (targetEmailEl) targetEmailEl.textContent = PORTFOLIO_DATA.contact.email;
@@ -899,6 +914,20 @@
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
       showToast("Downloaded editable index.html!");
+    }
+
+    // Open & Trigger Print Dialog for the Attached PDF Resume
+    function printResumePdf() {
+      const resumePath = PORTFOLIO_DATA.contact.resumeFile;
+      const printWindow = window.open(resumePath, "_blank");
+      if (printWindow) {
+        printWindow.addEventListener("load", () => {
+          printWindow.focus();
+          printWindow.print();
+        });
+      } else {
+        showToast("Please allow pop-ups or check your resume PDF path.");
+      }
     }
 
     function showToast(message) {
