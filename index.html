@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHANASUNDAR | Mechanical Design Engineer</title>
+  <!-- Google Fonts: Inter & JetBrains Mono for technical CAD aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-white text-black font-sans antialiased selection:bg-black selection:text-white">
+
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION BAR (Auto-populated from PORTFOLIO_DATA)               -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-neutral-200 print:hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <span class="w-8 h-8 rounded-md bg-black text-white font-mono text-xs font-bold flex items-center justify-center tracking-wider group-hover:bg-neutral-800 transition">
+          DS
+        </span>
+        <span id="nav-name" class="font-bold tracking-tight text-sm sm:text-base uppercase">DHANASUNDAR</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-neutral-600">
+        <a href="#about" class="hover:text-black transition">Objective</a>
+        <a href="#projects" class="hover:text-black transition">Projects</a>
+        <a href="#experience" class="hover:text-black transition">Internships</a>
+        <a href="#skills" class="hover:text-black transition">Skills</a>
+        <a href="#education" class="hover:text-black transition">Education</a>
+        <a href="#contact" class="hover:text-black transition">Enquiry</a>
+      </nav>
+
+      <!-- Quick Utility Buttons (LinkedIn / Print Resume / Mobile Menu) -->
+      <div class="flex items-center gap-2">
+        <a
+          id="nav-linkedin"
+          href="https://www.linkedin.com/in/your-linkedin-id"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-300 text-xs font-mono uppercase tracking-wider hover:border-black hover:bg-neutral-100 transition"
+        >
+          <span>LinkedIn</span>
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+        <button
+          onclick="window.print()"
+          title="Save or Print as PDF Resume"
+          class="px-3 py-1.5 rounded-md border border-black text-xs font-mono uppercase tracking-wider hover:bg-black hover:text-white transition"
+        >
+          Print / PDF
+        </button>
+        <button
+          id="mobile-menu-btn"
+          aria-label="Toggle Menu"
+          class="md:hidden p-2 rounded-md border border-neutral-300 hover:border-black transition"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-neutral-200 bg-white px-4 py-3 space-y-2 text-xs font-mono uppercase tracking-wider">
+      <a href="#about" class="block py-1.5 hover:text-neutral-500">01. Objective</a>
+      <a href="#projects" class="block py-1.5 hover:text-neutral-500">02. CAD Projects</a>
+      <a href="#experience" class="block py-1.5 hover:text-neutral-500">03. Internships</a>
+      <a href="#skills" class="block py-1.5 hover:text-neutral-500">04. Skills</a>
+      <a href="#education" class="block py-1.5 hover:text-neutral-500">05. Education</a>
+      <a href="#contact" class="block py-1.5 hover:text-neutral-500">06. Contact &amp; Enquiry</a>
+      <a id="mobile-linkedin" href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer" class="block py-1.5 font-semibold text-black">07. LinkedIn Profile &#8599;</a>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN PORTFOLIO CONTENT                                                -->
+  <!-- ===================================================================== -->
+  <main id="top" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- HERO SECTION WITH SUBTLE CAD DRAFTING GRID -->
+    <section
+      id="about"
+      class="relative py-14 sm:py-24 border-b border-neutral-200 overflow-hidden"
+      style="background-image: linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 32px 32px;"
+    >
+      <div class="relative bg-white/90 backdrop-blur-[1px] p-6 sm:p-10 rounded-xl border border-neutral-300 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-6 mb-6 border-b border-neutral-200 font-mono text-xs text-neutral-500">
+          <span>DWG NO: PORTFOLIO-REV-01</span>
+          <span id="hero-status" class="inline-flex items-center gap-2 text-black font-medium">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
+            AVAILABLE FOR ENTRY-LEVEL OPPORTUNITIES
+          </span>
+        </div>
+
+        <p id="hero-role" class="font-mono text-xs sm:text-sm uppercase tracking-widest text-neutral-600 mb-3">
+          MECHANICAL DESIGN ENGINEER - FRESHER
+        </p>
+
+        <h1 id="hero-name" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase text-black mb-6">
+          DHANASUNDAR
+        </h1>
+
+        <div class="max-w-3xl">
+          <h2 class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Career Objective</h2>
+          <p id="hero-objective" class="text-base sm:text-lg text-neutral-800 leading-relaxed font-normal">
+            Entry-level Mechanical Design Engineer with basic knowledge of SolidWorks and AutoCAD, eager to learn, contribute to design projects, and grow in a professional engineering environment.
+          </p>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-neutral-200 flex flex-wrap items-center gap-3 print:hidden">
+          <a
+            href="#projects"
+            class="px-5 py-2.5 rounded-lg bg-black text-white text-xs font-mono uppercase tracking-wider hover:bg-neutral-800 transition"
+          >
+            View CAD Projects &rarr;
+          </a>
+          <a
+            href="#contact"
+            class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-neutral-100 transition"
+          >
+            Send Enquiry
+          </a>
+          <a
+            id="hero-linkedin"
+            href="https://www.linkedin.com/in/your-linkedin-id"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-black hover:text-white transition"
+          >
+            LinkedIn Profile &#8599;
+          </a>
+          <button
+            onclick="copyEmailToClipboard()"
+            class="px-5 py-2.5 rounded-lg border border-neutral-300 text-neutral-700 text-xs font-mono uppercase tracking-wider hover:border-black hover:text-black transition"
+          >
+            Copy Email
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 01. CAD PROJECTS SHOWCASE                                           -->
+    <!-- =================================================================== -->
+    <section id="projects" class="py-14 sm:py-20 border-b border-neutral-200">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">01 // CAD PORTFOLIO</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase mt-1">Projects &amp; Models</h2>
+        </div>
+        <div id="project-filters" class="flex flex-wrap gap-2 font-mono text-xs uppercase">
+          <button data-filter="ALL" class="filter-btn px-3.5 py-1.5 rounded-md border border-black bg-black text-white transition">All</button>
+          <button data-filter="SolidWorks" class="filter-btn px-3.5 py-1.5 rounded-md border border-neutral-300 bg-white text-black hover:border-black transition">SolidWorks</button>
+          <button data-filter="AutoCAD" class="filter-btn px-3.5 py-1.5 rounded-md border border-neutral-300 bg-white text-black hover:border-black transition">AutoCAD</button>
+        </div>
+      </div>
+
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated automatically by JavaScript -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 02. INTERNSHIP EXPERIENCE                                           -->
+    <!-- =================================================================== -->
+    <section id="experience" class="py-14 sm:py-20 border-b border-neutral-200">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">02 // INDUSTRIAL TRAINING</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase mt-1">Internships</h2>
+      </div>
+
+      <div id="internships-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Populated automatically by JavaScript -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 03. TECHNICAL & CORE ENGINEERING SKILLS                             -->
+    <!-- =================================================================== -->
+    <section id="skills" class="py-14 sm:py-20 border-b border-neutral-200">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">03 // CAPABILITIES</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase mt-1">Software &amp; Core Skills</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-5 space-y-4">
+          <h3 class="font-mono text-xs uppercase tracking-widest text-neutral-500">CAD Software Proficiency</h3>
+          <div id="software-skills-list" class="space-y-4">
+            <!-- Populated automatically by JavaScript -->
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <h3 class="font-mono text-xs uppercase tracking-widest text-neutral-500">Core Engineering Strengths</h3>
+          <div id="core-skills-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Populated automatically by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 04. EDUCATION QUALIFICATIONS                                        -->
+    <!-- =================================================================== -->
+    <section id="education" class="py-14 sm:py-20 border-b border-neutral-200">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">04 // ACADEMIC BACKGROUND</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase mt-1">Education</h2>
+      </div>
+
+      <div id="education-list" class="space-y-4">
+        <!-- Populated automatically by JavaScript -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 05. REDESIGNED BOTTOM SECTION: DIRECT CONTACT & PROJECT ENQUIRY     -->
+    <!-- =================================================================== -->
+    <section id="contact" class="py-16 sm:py-24">
+      <!-- Section Header -->
+      <div class="border-b-2 border-black pb-6 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">05 // CONNECT &amp; COLLABORATE</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight uppercase mt-1">Contact &amp; Enquiry</h2>
+        </div>
+        <p class="font-mono text-xs uppercase tracking-wider text-neutral-600">
+          DIRECT RESPONSE CHANNEL // SIVAGANGAI, TAMIL NADU
+        </p>
+      </div>
+
+      <!-- Two-Column Architectural Split Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- LEFT COLUMN (5 cols): Direct Contact Cards & LinkedIn Profile -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="p-6 rounded-xl border-2 border-black bg-black text-white">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs uppercase tracking-widest text-neutral-400">Professional Network</span>
+              <span class="font-mono text-xs px-2 py-0.5 rounded bg-white text-black font-semibold">LINKEDIN</span>
+            </div>
+            <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Connect on LinkedIn</h3>
+            <p class="text-sm text-neutral-300 mb-5 leading-relaxed">
+              View my mechanical engineering updates, CAD design journey, and connect directly for entry-level opportunities.
+            </p>
+            <a
+              id="contact-linkedin-btn"
+              href="https://www.linkedin.com/in/your-linkedin-id"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-between px-4 py-3 rounded-lg bg-white text-black font-mono text-xs font-semibold uppercase tracking-wider hover:bg-neutral-200 transition"
+            >
+              <span id="contact-linkedin-label">linkedin.com/in/your-linkedin-id</span>
+              <span>OPEN PROFILE &#8599;</span>
+            </a>
+          </div>
+
+          <!-- Dynamic Direct Contact Details (Email, Phone, Address) -->
+          <div id="contact-grid" class="space-y-4">
+            <!-- Populated automatically by JavaScript -->
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN (7 cols): Functional Project & Hiring Enquiry Form -->
+        <div class="lg:col-span-7 p-6 sm:p-8 rounded-xl border-2 border-black bg-white shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-6 border-b border-neutral-200">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">ENQUIRY DISPATCH FORM</span>
+              <h3 class="text-xl sm:text-2xl font-bold uppercase tracking-tight mt-0.5">Send an Enquiry</h3>
+            </div>
+            <span class="font-mono text-xs px-2.5 py-1 rounded border border-neutral-300 bg-neutral-50 text-neutral-700">
+              FORM-REV-02
+            </span>
+          </div>
+
+          <form id="enquiry-form" onsubmit="handleEnquirySubmit(event)" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="enquiry-name" class="block font-mono text-xs uppercase tracking-wider text-neutral-700 mb-2">
+                  Your Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="enquiry-name"
+                  required
+                  placeholder="Enter your name"
+                  class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-neutral-50 text-sm text-black placeholder-neutral-400 focus:outline-none focus:border-black focus:bg-white transition"
+                />
+              </div>
+
+              <div>
+                <label for="enquiry-email" class="block font-mono text-xs uppercase tracking-wider text-neutral-700 mb-2">
+                  Your Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="enquiry-email"
+                  required
+                  placeholder="name@company.com"
+                  class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-neutral-50 text-sm text-black placeholder-neutral-400 focus:outline-none focus:border-black focus:bg-white transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="enquiry-type" class="block font-mono text-xs uppercase tracking-wider text-neutral-700 mb-2">
+                Enquiry Category *
+              </label>
+              <select
+                id="enquiry-type"
+                class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-neutral-50 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition"
+              >
+                <option value="Job Opportunity / Recruitment">Job Opportunity / Recruitment</option>
+                <option value="Mechanical Design / CAD Project">Mechanical Design / CAD Project</option>
+                <option value="Internship / Mentorship">Internship / Mentorship</option>
+                <option value="General Enquiry">General Enquiry</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="enquiry-message" class="block font-mono text-xs uppercase tracking-wider text-neutral-700 mb-2">
+                Project or Role Details *
+              </label>
+              <textarea
+                id="enquiry-message"
+                rows="4"
+                required
+                placeholder="Write your message, role requirements, or CAD design enquiry here..."
+                class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-neutral-50 text-sm text-black placeholder-neutral-400 focus:outline-none focus:border-black focus:bg-white transition"
+              ></textarea>
+            </div>
+
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <button
+                type="submit"
+                class="flex-1 px-6 py-3.5 rounded-lg bg-black text-white font-mono text-xs font-semibold uppercase tracking-wider hover:bg-neutral-800 transition text-center"
+              >
+                Launch Email Enquiry &rarr;
+              </button>
+              <button
+                type="button"
+                onclick="copyEnquiryMessage()"
+                class="px-5 py-3.5 rounded-lg border border-black text-black font-mono text-xs font-semibold uppercase tracking-wider hover:bg-neutral-100 transition text-center"
+              >
+                Copy Message
+              </button>
+            </div>
+
+            <p class="font-mono text-[11px] text-neutral-500 leading-relaxed">
+              * Clicking "Launch Email Enquiry" opens your default email client pre-addressed to <span id="enquiry-target-email" class="text-black font-semibold">dhanasundar01@gmail.com</span> with your formatted enquiry.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER                                                                -->
+  <!-- ===================================================================== -->
+  <footer class="border-t-2 border-black bg-neutral-50 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-600">
+      <p>&copy; <span id="footer-year"></span> <span id="footer-name" class="text-black font-semibold">DHANASUNDAR</span>. ALL RIGHTS RESERVED.</p>
+      <div class="flex flex-wrap items-center gap-4 print:hidden">
+        <a id="footer-linkedin" href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer" class="underline hover:text-black transition">
+          LinkedIn &#8599;
+        </a>
+        <button onclick="window.print()" class="underline hover:text-black transition">
+          Print / Save PDF
+        </button>
+        <button onclick="downloadEditableHtml()" class="underline hover:text-black transition">
+          Download Editable index.html
+        </button>
+        <a href="#top" class="hover:text-black transition">Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- PROJECT INSPECTION MODAL (Opens when clicking any project card)       -->
+  <!-- ===================================================================== -->
+  <div
+    id="project-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-xs p-4"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="bg-white border border-black rounded-xl max-w-2xl w-full overflow-hidden shadow-2xl">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-neutral-200 bg-neutral-50">
+        <span id="modal-series" class="font-mono text-xs uppercase tracking-wider text-neutral-600">PROJECT SPEC</span>
+        <button
+          onclick="closeProjectModal()"
+          class="p-1.5 rounded-md border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
+          aria-label="Close modal"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-5 max-h-[80vh] overflow-y-auto">
+        <div class="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-100 overflow-hidden">
+          <img id="modal-image" src="" alt="Project Preview" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h3 id="modal-title" class="text-xl sm:text-2xl font-bold uppercase tracking-tight"></h3>
+          <span id="modal-software" class="px-3 py-1 rounded-md bg-black text-white font-mono text-xs uppercase"></span>
+        </div>
+
+        <p id="modal-description" class="text-sm sm:text-base text-neutral-700 leading-relaxed"></p>
+
+        <div id="modal-highlights-wrapper" class="pt-4 border-t border-neutral-200">
+          <h4 class="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-2">Design Specifications</h4>
+          <ul id="modal-highlights" class="space-y-1.5 text-sm text-neutral-800 list-disc list-inside"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Banner -->
+  <div
+    id="toast"
+    class="fixed bottom-5 right-5 z-50 hidden px-4 py-2.5 rounded-lg bg-black text-white font-mono text-xs shadow-lg border border-neutral-700"
+  ></div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT CONFIGURATION & RENDERING ENGINE                           -->
+  <!-- ===================================================================== -->
+  <script>
+    /* =====================================================================
+       === EDIT YOUR DETAILS BELOW ===
+       Everything on your portfolio website comes from this single object.
+       To update text, change any value inside quotes ("...").
+       To add a new project, internship, skill, or degree, copy one block
+       { ... }, paste it below the existing item, and edit the text.
+       ===================================================================== */
+    const PORTFOLIO_DATA = {
+      // 1. PERSONAL & HEADER DETAILS
+      profile: {
+        name: "DHANASUNDAR",
+        title: "MECHANICAL DESIGN ENGINEER - FRESHER",
+        availabilityStatus: "AVAILABLE FOR ENTRY-LEVEL OPPORTUNITIES",
+        objective:
+          "Entry-level Mechanical Design Engineer with basic knowledge of SolidWorks and AutoCAD, eager to learn, contribute to design projects, and grow in a professional engineering environment.",
+      },
+
+      // 2. CONTACT & LINKEDIN DETAILS (Edit your LinkedIn URL right below!)
+      contact: {
+        address: "15, North New Street, Manamadurai, Sivagangai",
+        phone: "+91 9092055547",
+        email: "dhanasundar01@gmail.com",
+        linkedinUrl: "https://www.linkedin.com/in/your-linkedin-id",
+        linkedinLabel: "linkedin.com/in/your-linkedin-id",
+      },
+
+      // 3. PROJECTS SHOWCASE
+      // Tip: Replace `image` URLs with your own SolidWorks / AutoCAD renders (e.g., "./images/gearbox.png")
+      projects: [
+        {
+          title: "3D Mechanical Part & Assembly Model",
+          series: "SERIES 01 // SOLIDWORKS 3D CAD",
+          software: "SolidWorks",
+          image: "https://placehold.co/800x500/111111/FFFFFF?text=SOLIDWORKS+3D+ASSEMBLY+MODEL",
+          description:
+            "Parametric 3D solid modeling and multi-part assembly created in SolidWorks with full geometric constraints, mating conditions, and exploded view documentation.",
+          highlights: [
+            "Part modeling using Extrude, Revolve, Fillet, and Pattern features",
+            "Assembly mates and interference detection check",
+            "2D orthographic drafting sheets generated from 3D model",
+          ],
+        },
+        {
+          title: "2D Engineering Layout & Orthographic Drafting",
+          series: "SERIES 02 // AUTOCAD 2D DRAFTING",
+          software: "AutoCAD",
+          image: "https://placehold.co/800x500/F4F4F5/111111?text=AUTOCAD+2D+ENGINEERING+DRAWING",
+          description:
+            "Precision 2D technical drawings featuring front, top, and sectional views with standard engineering dimensioning, tolerances, and title block formatting.",
+          highlights: [
+            "Layered CAD organization for centerlines, hidden lines, and dimensions",
+            "Sectional views and geometric tolerance annotations",
+            "Print-ready ISO/ANSI standard sheet layout",
+          ],
+        },
+        {
+          title: "Custom Mechanical Component Design (Starter Slot)",
+          series: "SERIES 03 // PORTFOLIO SLOT",
+          software: "SolidWorks",
+          image: "https://placehold.co/800x500/262626/FFFFFF?text=ADD+YOUR+CAD+MODEL+HERE",
+          description:
+            "Starter slot ready for your next SolidWorks or AutoCAD project. Edit the title, software tag, description, and image path inside PORTFOLIO_DATA in the HTML file.",
+          highlights: [
+            "Paste your exported CAD screenshot path in the image field",
+            "Update bullet points with material, dimensions, or design goals",
+            "Automatically appears in the filterable project grid",
+          ],
+        },
+      ],
+
+      // 4. INTERNSHIP EXPERIENCE
+      internships: [
+        {
+          role: "AutoCAD Designer",
+          duration: "JAN 2023 - 10 DAYS",
+          organization: "Industrial CAD Training / Internship",
+          responsibilities: [
+            "Conducted day-to-day project coordination, planning, and implementation across multiple teams.",
+            "Learned multiple details on designing types and tool usage.",
+          ],
+        },
+        {
+          role: "SolidWorks Designer",
+          duration: "JULY 2024 - 10 DAYS",
+          organization: "3D CAD Design Training / Internship",
+          responsibilities: [
+            "Managed complex projects from start to finish.",
+            "Translated requirements into polished, complete designs.",
+          ],
+        },
+      ],
+
+      // 5. CAD SOFTWARE SKILLS
+      softwareSkills: [
+        {
+          name: "AutoCAD",
+          level: "Beginner Level",
+          percent: 65,
+          details: "2D Drafting, Orthographic Projections, Dimensioning & Layers",
+        },
+        {
+          name: "SolidWorks",
+          level: "Beginner Level",
+          percent: 65,
+          details: "3D Part Modeling, Basic Assemblies & Engineering Drawings",
+        },
+      ],
+
+      // 6. CORE ENGINEERING & PERSONAL SKILLS
+      coreSkills: [
+        "Good time management skills",
+        "Eager to learn new design tools and technologies",
+        "Open to guidance and mentorship",
+        "Strong attention to detail",
+        "Ability to analyze and understand requirements",
+      ],
+
+      // 7. EDUCATION QUALIFICATIONS
+      education: [
+        {
+          degree: "B.E in Mechanical Engineering",
+          institution: "Hindusthan College of Engineering and Technology",
+          tag: "UNDERGRADUATE",
+        },
+        {
+          degree: "HSC (Higher Secondary Certificate)",
+          institution: "Seventh Day Adventist Matric Higher Secondary School",
+          tag: "HIGHER SECONDARY",
+        },
+        {
+          degree: "SSLC (Secondary School Leaving Certificate)",
+          institution: "Seventh Day Adventist Matric Higher Secondary School",
+          tag: "SECONDARY SCHOOL",
+        },
+      ],
+    };
+
+    /* =====================================================================
+       RENDERING LOGIC (No need to edit below unless changing layout)
+       ===================================================================== */
+    function renderPortfolio() {
+      // Populate Header, Hero & LinkedIn Links
+      document.getElementById("nav-name").textContent = PORTFOLIO_DATA.profile.name;
+      document.getElementById("hero-name").textContent = PORTFOLIO_DATA.profile.name;
+      document.getElementById("hero-role").textContent = PORTFOLIO_DATA.profile.title;
+      document.getElementById("hero-objective").textContent = PORTFOLIO_DATA.profile.objective;
+      document.getElementById("footer-name").textContent = PORTFOLIO_DATA.profile.name;
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+      const linkedinUrl = PORTFOLIO_DATA.contact.linkedinUrl;
+      const linkedinLabel = PORTFOLIO_DATA.contact.linkedinLabel;
+      ["nav-linkedin", "mobile-linkedin", "hero-linkedin", "contact-linkedin-btn", "footer-linkedin"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.href = linkedinUrl;
+      });
+      const linkedinLabelEl = document.getElementById("contact-linkedin-label");
+      if (linkedinLabelEl) linkedinLabelEl.textContent = linkedinLabel;
+
+      const targetEmailEl = document.getElementById("enquiry-target-email");
+      if (targetEmailEl) targetEmailEl.textContent = PORTFOLIO_DATA.contact.email;
+
+      // Render Projects
+      renderProjects("ALL");
+
+      // Render Internships
+      const internshipsContainer = document.getElementById("internships-list");
+      internshipsContainer.innerHTML = PORTFOLIO_DATA.internships
+        .map(
+          (item, index) => `
+          <article class="p-6 rounded-xl border border-neutral-300 bg-white hover:border-black transition flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-xs px-2.5 py-1 rounded bg-black text-white uppercase">${item.duration}</span>
+                <span class="font-mono text-xs text-neutral-400">EXP-0${index + 1}</span>
+              </div>
+              <h3 class="text-xl font-bold uppercase tracking-tight text-black">${item.role}</h3>
+              <p class="font-mono text-xs text-neutral-500 mt-1 mb-4">${item.organization}</p>
+              <ul class="space-y-2 text-sm text-neutral-700">
+                ${item.responsibilities
+                  .map(
+                    (point) => `
+                  <li class="flex items-start gap-2.5">
+                    <span class="font-mono text-black font-bold mt-0.5">&rarr;</span>
+                    <span>${point}</span>
+                  </li>`
+                  )
+                  .join("")}
+              </ul>
+            </div>
+          </article>
+        `
+        )
+        .join("");
+
+      // Render Software Skills
+      const softwareContainer = document.getElementById("software-skills-list");
+      softwareContainer.innerHTML = PORTFOLIO_DATA.softwareSkills
+        .map(
+          (skill) => `
+          <div class="p-5 rounded-xl border border-neutral-300 bg-neutral-50">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-base uppercase tracking-tight">${skill.name}</span>
+              <span class="font-mono text-xs px-2.5 py-0.5 rounded border border-black bg-white text-black">${skill.level}</span>
+            </div>
+            <p class="text-xs text-neutral-600 mb-3">${skill.details}</p>
+            <div class="w-full h-2 bg-neutral-200 rounded-full overflow-hidden">
+              <div class="h-full bg-black rounded-full" style="width: ${skill.percent}%"></div>
+            </div>
+          </div>
+        `
+        )
+        .join("");
+
+      // Render Core Skills
+      const coreSkillsContainer = document.getElementById("core-skills-list");
+      coreSkillsContainer.innerHTML = PORTFOLIO_DATA.coreSkills
+        .map(
+          (skill, idx) => `
+          <div class="p-4 rounded-xl border border-neutral-300 bg-white flex items-start gap-3 hover:border-black transition">
+            <span class="font-mono text-xs font-semibold text-neutral-400 mt-0.5">0${idx + 1}</span>
+            <span class="text-sm font-medium text-neutral-900">${skill}</span>
+          </div>
+        `
+        )
+        .join("");
+
+      // Render Education
+      const educationContainer = document.getElementById("education-list");
+      educationContainer.innerHTML = PORTFOLIO_DATA.education
+        .map(
+          (edu) => `
+          <div class="p-5 sm:p-6 rounded-xl border border-neutral-300 bg-white hover:border-black transition flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="text-base sm:text-lg font-bold uppercase tracking-tight text-black">${edu.degree}</h3>
+              <p class="text-sm text-neutral-600 mt-0.5">${edu.institution}</p>
+            </div>
+            <span class="self-start sm:self-center font-mono text-xs px-3 py-1 rounded border border-neutral-300 bg-neutral-50 text-neutral-700 uppercase">
+              ${edu.tag}
+            </span>
+          </div>
+        `
+        )
+        .join("");
+
+      // Render Contact Cards in Left Column of Contact & Enquiry Section
+      const contactContainer = document.getElementById("contact-grid");
+      contactContainer.innerHTML = `
+        <div class="p-5 rounded-xl border border-neutral-300 bg-white hover:border-black transition flex items-center justify-between gap-3">
+          <a href="mailto:${PORTFOLIO_DATA.contact.email}" class="min-w-0">
+            <span class="font-mono text-[11px] uppercase tracking-wider text-neutral-500 block mb-1">Email Address</span>
+            <p class="text-sm font-mono font-semibold text-black break-all">${PORTFOLIO_DATA.contact.email}</p>
+          </a>
+          <button
+            type="button"
+            onclick="copyEmailToClipboard()"
+            class="shrink-0 px-3 py-1.5 rounded-md border border-neutral-300 font-mono text-[11px] uppercase hover:border-black hover:bg-black hover:text-white transition"
+          >
+            Copy
+          </button>
+        </div>
+
+        <a href="tel:${PORTFOLIO_DATA.contact.phone.replace(/\s+/g, '')}" class="p-5 rounded-xl border border-neutral-300 bg-white hover:border-black transition block">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-neutral-500 block mb-1">Phone Number</span>
+          <p class="text-sm font-mono font-semibold text-black">${PORTFOLIO_DATA.contact.phone}</p>
+        </a>
+
+        <div class="p-5 rounded-xl border border-neutral-300 bg-white hover:border-black transition">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-neutral-500 block mb-1">Location / Address</span>
+          <p class="text-sm font-medium text-black">${PORTFOLIO_DATA.contact.address}</p>
+        </div>
+      `;
+    }
+
+    // Render Filterable Project Cards
+    function renderProjects(filter) {
+      const grid = document.getElementById("projects-grid");
+      const filtered =
+        filter === "ALL"
+          ? PORTFOLIO_DATA.projects
+          : PORTFOLIO_DATA.projects.filter(
+              (p) => p.software.toLowerCase() === filter.toLowerCase()
+            );
+
+      grid.innerHTML = filtered
+        .map((project, idx) => {
+          const originalIndex = PORTFOLIO_DATA.projects.indexOf(project);
+          return `
+            <article
+              onclick="openProjectModal(${originalIndex})"
+              class="group cursor-pointer rounded-xl border border-neutral-300 bg-white overflow-hidden hover:border-black transition flex flex-col justify-between"
+            >
+              <div>
+                <div class="aspect-video w-full bg-neutral-100 border-b border-neutral-200 overflow-hidden relative">
+                  <img
+                    src="${project.image}"
+                    alt="${project.title}"
+                    onerror="this.src='https://placehold.co/800x500/111111/FFFFFF?text=CAD+MODEL+PREVIEW'"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-300"
+                  />
+                  <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-black text-white font-mono text-[11px] uppercase">
+                    ${project.software}
+                  </span>
+                </div>
+                <div class="p-5">
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-neutral-500">${project.series}</span>
+                  <h3 class="text-lg font-bold uppercase tracking-tight mt-1 mb-2 group-hover:underline">${project.title}</h3>
+                  <p class="text-sm text-neutral-600 line-clamp-3">${project.description}</p>
+                </div>
+              </div>
+              <div class="px-5 py-3 border-t border-neutral-100 bg-neutral-50 flex items-center justify-between font-mono text-xs">
+                <span>INSPECT DRAWING</span>
+                <span>&rarr;</span>
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+    }
+
+    // Filter Button Click Handler
+    document.getElementById("project-filters").addEventListener("click", (e) => {
+      const btn = e.target.closest(".filter-btn");
+      if (!btn) return;
+      document.querySelectorAll(".filter-btn").forEach((b) => {
+        b.classList.remove("bg-black", "text-white", "border-black");
+        b.classList.add("bg-white", "text-black", "border-neutral-300");
+      });
+      btn.classList.remove("bg-white", "text-black", "border-neutral-300");
+      btn.classList.add("bg-black", "text-white", "border-black");
+      renderProjects(btn.dataset.filter);
+    });
+
+    // Project Modal Functions
+    function openProjectModal(index) {
+      const project = PORTFOLIO_DATA.projects[index];
+      if (!project) return;
+      document.getElementById("modal-series").textContent = project.series;
+      document.getElementById("modal-title").textContent = project.title;
+      document.getElementById("modal-software").textContent = project.software;
+      document.getElementById("modal-description").textContent = project.description;
+      const img = document.getElementById("modal-image");
+      img.src = project.image;
+      img.onerror = () => {
+        img.src = "https://placehold.co/800x500/111111/FFFFFF?text=CAD+MODEL+PREVIEW";
+      };
+
+      const highlightsList = document.getElementById("modal-highlights");
+      highlightsList.innerHTML = (project.highlights || [])
+        .map((h) => `<li>${h}</li>`)
+        .join("");
+
+      const modal = document.getElementById("project-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById("project-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    document.getElementById("project-modal").addEventListener("click", (e) => {
+      if (e.target.id === "project-modal") closeProjectModal();
+    });
+
+    // Mobile Menu Toggle
+    document.getElementById("mobile-menu-btn").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+
+    // Copy Email Helper (Uses execCommand fallback for iframe compatibility)
+    function copyEmailToClipboard() {
+      const tempInput = document.createElement("input");
+      tempInput.value = PORTFOLIO_DATA.contact.email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      showToast("Copied email: " + PORTFOLIO_DATA.contact.email);
+    }
+
+    // Build Formatted Enquiry Text
+    function getFormattedEnquiry() {
+      const senderName = document.getElementById("enquiry-name").value.trim() || "Prospective Employer / Client";
+      const senderEmail = document.getElementById("enquiry-email").value.trim() || "Not provided";
+      const enquiryType = document.getElementById("enquiry-type").value;
+      const message = document.getElementById("enquiry-message").value.trim();
+
+      const subject = `[Portfolio Enquiry - ${enquiryType}] from ${senderName}`;
+      const body =
+        `Hello ${PORTFOLIO_DATA.profile.name},\n\n` +
+        `Enquiry Type: ${enquiryType}\n` +
+        `From: ${senderName} (${senderEmail})\n\n` +
+        `Message:\n${message}\n`;
+
+      return { subject, body };
+    }
+
+    // Launch Default Email Client with Pre-Filled Enquiry
+    function handleEnquirySubmit(event) {
+      event.preventDefault();
+      const { subject, body } = getFormattedEnquiry();
+      const mailtoLink =
+        `mailto:${encodeURIComponent(PORTFOLIO_DATA.contact.email)}` +
+        `?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+      showToast("Opening email client to send enquiry...");
+    }
+
+    // Copy Enquiry Message to Clipboard
+    function copyEnquiryMessage() {
+      const messageVal = document.getElementById("enquiry-message").value.trim();
+      if (!messageVal) {
+        showToast("Please type a message first to copy.");
+        return;
+      }
+      const { subject, body } = getFormattedEnquiry();
+      const fullText = `To: ${PORTFOLIO_DATA.contact.email}\nSubject: ${subject}\n\n${body}`;
+      const tempArea = document.createElement("textarea");
+      tempArea.value = fullText;
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempArea);
+      showToast("Formatted enquiry copied to clipboard!");
+    }
+
+    // Download Complete Standalone HTML File Helper
+    function downloadEditableHtml() {
+      const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "index.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Downloaded editable index.html!");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.remove("hidden");
+      setTimeout(() => toast.classList.add("hidden"), 3000);
+    }
+
+    // Initialize Page
+    window.addEventListener("DOMContentLoaded", renderPortfolio);
+  </script>
+</body>
+</html>
