@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DHANASUNDAR.R | Mechanical Design Engineer</title>
+  <title>DHANASUNDAR | Mechanical Design Engineer</title>
   <!-- Google Fonts: Inter & JetBrains Mono for technical CAD aesthetic -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +34,7 @@
         <span class="w-8 h-8 rounded-md bg-black text-white font-mono text-xs font-bold flex items-center justify-center tracking-wider group-hover:bg-neutral-800 transition">
           DS
         </span>
-        <span id="nav-name" class="font-bold tracking-tight text-sm sm:text-base uppercase">DHANASUNDAR.R</span>
+        <span id="nav-name" class="font-bold tracking-tight text-sm sm:text-base uppercase">DHANASUNDAR</span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -44,14 +44,14 @@
         <a href="#experience" class="hover:text-black transition">Internships</a>
         <a href="#skills" class="hover:text-black transition">Skills</a>
         <a href="#education" class="hover:text-black transition">Education</a>
-        <a href="#contact" class="hover:text-black transition">Contact me</a>
+        <a href="#contact" class="hover:text-black transition">Enquiry</a>
       </nav>
 
       <!-- Quick Utility Buttons (LinkedIn / Print Resume / Mobile Menu) -->
       <div class="flex items-center gap-2">
         <a
           id="nav-linkedin"
-          href="https://www.linkedin.com/in/dhana-sundar-r-86b829401/"
+          href="https://www.linkedin.com/in/your-linkedin-id"
           target="_blank"
           rel="noopener noreferrer"
           class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-300 text-xs font-mono uppercase tracking-wider hover:border-black hover:bg-neutral-100 transition"
@@ -59,7 +59,7 @@
           <span>LinkedIn</span>
           <span aria-hidden="true">&#8599;</span>
         </a>
-       <a
+        <a
           id="nav-resume"
           href="DHANA%20SUNDAR%20RESUME%202026%20NOV.pdf"
           target="_blank"
@@ -90,7 +90,7 @@
       <a href="#education" class="block py-1.5 hover:text-neutral-500">05. Education</a>
       <a href="#contact" class="block py-1.5 hover:text-neutral-500">06. Contact &amp; Enquiry</a>
       <a id="mobile-linkedin" href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer" class="block py-1.5 font-semibold text-black">07. LinkedIn Profile &#8599;</a>
-      <a id="mobile-resume" href="DHANA SUNDAR RESUME 2026 NOV.pdf" target="_blank" rel="noopener noreferrer" download="DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf" class="block py-1.5 font-semibold text-black">08. Download Resume PDF &darr;</a>
+      <button type="button" onclick="downloadResumePdf(event)" class="block w-full text-left py-1.5 font-semibold text-black">08. Download Resume PDF &darr;</button>
     </div>
   </header>
 
@@ -119,7 +119,7 @@
         </p>
 
         <h1 id="hero-name" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase text-black mb-6">
-          DHANASUNDAR.R
+          DHANASUNDAR
         </h1>
 
         <div class="max-w-3xl">
@@ -137,6 +137,12 @@
             View CAD Projects &rarr;
           </a>
           <a
+            href="#contact"
+            class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-neutral-100 transition"
+          >
+            Send Enquiry
+          </a>
+          <a
             id="hero-linkedin"
             href="https://www.linkedin.com/in/your-linkedin-id"
             target="_blank"
@@ -147,12 +153,19 @@
           </a>
           <a
             id="hero-resume"
-            href="DHANA SUNDAR RESUME 2026 NOV.pdf"
+            href="DHANA%20SUNDAR%20RESUME%202026%20NOV.pdf"
+            onclick="downloadResumePdf(event)"
             download="DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf"
             class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-black hover:text-white transition"
           >
             Download Resume (PDF) &darr;
           </a>
+          <button
+            onclick="copyEmailToClipboard()"
+            class="px-5 py-2.5 rounded-lg border border-neutral-300 text-neutral-700 text-xs font-mono uppercase tracking-wider hover:border-black hover:text-black transition"
+          >
+            Copy Email
+          </button>
         </div>
       </div>
     </section>
@@ -243,7 +256,7 @@
           <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight uppercase mt-1">Contact &amp; Enquiry</h2>
         </div>
         <p class="font-mono text-xs uppercase tracking-wider text-neutral-600">
-          SIVAGANGAI, TAMIL NADU
+          DIRECT RESPONSE CHANNEL // SIVAGANGAI, TAMIL NADU
         </p>
       </div>
 
@@ -464,15 +477,15 @@
         objective:
           "Entry-level Mechanical Design Engineer with basic knowledge of SolidWorks and AutoCAD, eager to learn, contribute to design projects, and grow in a professional engineering environment.",
       },
-
-      // 2. CONTACT, LINKEDIN & RESUME FILE DETAILS (Edit your LinkedIn URL & PDF path below!)
+      // 2. CONTACT, LINKEDIN & RESUME FILE DETAILS (Paste your Google Drive share link below!)
       contact: {
         address: "15, North New Street, Manamadurai, Sivagangai",
         phone: "+91 9092055547",
         email: "dhanasundar01@gmail.com",
-        linkedinUrl: "https://www.linkedin.com/in/dhana-sundar-r-86b829401/",
-        linkedinLabel: "SEE MY LINKEDIN WORKS",
-        resumeFile: "https://drive.google.com/file/d/1f2H3pKKBb4kOLWBPM7gGL8Wq3Ckx4Sov/view?usp=sharing",
+        linkedinUrl: "https://www.linkedin.com/in/your-linkedin-id",
+        linkedinLabel: "linkedin.com/in/your-linkedin-id",
+        // Paste your Google Drive link here (Make sure Drive access is set to "Anyone with the link"):
+        resumeFile: "https://drive.google.com/file/d/YOUR_GOOGLE_DRIVE_FILE_ID/view?usp=sharing",
         resumeDownloadName: "DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf",
       },
 
@@ -483,7 +496,7 @@
           title: "3D Mechanical Part & Assembly Model",
           series: "SERIES 01 // SOLIDWORKS 3D CAD",
           software: "SolidWorks",
-          image: "https://ibb.co/PvGq4k9y",
+          image: "https://placehold.co/800x500/111111/FFFFFF?text=SOLIDWORKS+3D+ASSEMBLY+MODEL",
           description:
             "Parametric 3D solid modeling and multi-part assembly created in SolidWorks with full geometric constraints, mating conditions, and exploded view documentation.",
           highlights: [
@@ -496,7 +509,7 @@
           title: "2D Engineering Layout & Orthographic Drafting",
           series: "SERIES 02 // AUTOCAD 2D DRAFTING",
           software: "AutoCAD",
-          image: "https://ibb.co/PvGq4k9y",
+          image: "https://placehold.co/800x500/F4F4F5/111111?text=AUTOCAD+2D+ENGINEERING+DRAWING",
           description:
             "Precision 2D technical drawings featuring front, top, and sectional views with standard engineering dimensioning, tolerances, and title block formatting.",
           highlights: [
@@ -546,13 +559,13 @@
       softwareSkills: [
         {
           name: "AutoCAD",
-          level: "Intermediate Level",
+          level: "Beginner Level",
           percent: 65,
           details: "2D Drafting, Orthographic Projections, Dimensioning & Layers",
         },
         {
           name: "SolidWorks",
-          level: "Intermediate Level",
+          level: "Beginner Level",
           percent: 65,
           details: "3D Part Modeling, Basic Assemblies & Engineering Drawings",
         },
@@ -572,17 +585,17 @@
         {
           degree: "B.E in Mechanical Engineering",
           institution: "Hindusthan College of Engineering and Technology",
-          tag: "2021-2025",
+          tag: "UNDERGRADUATE",
         },
         {
           degree: "HSC (Higher Secondary Certificate)",
           institution: "Seventh Day Adventist Matric Higher Secondary School",
-          tag: "APRIL-2021",
+          tag: "HIGHER SECONDARY",
         },
         {
           degree: "SSLC (Secondary School Leaving Certificate)",
           institution: "Seventh Day Adventist Matric Higher Secondary School",
-          tag: "MAY-2019",
+          tag: "SECONDARY SCHOOL",
         },
       ],
     };
@@ -607,16 +620,16 @@
       });
       const linkedinLabelEl = document.getElementById("contact-linkedin-label");
       if (linkedinLabelEl) linkedinLabelEl.textContent = linkedinLabel;
-
-      // Wire PDF Resume Links
-      const resumeFile = PORTFOLIO_DATA.contact.resumeFile;
+      // Wire PDF Resume Links (Supports both Google Drive share links and local PDF filenames)
+      const resumeLinks = getResumeUrls(PORTFOLIO_DATA.contact.resumeFile);
       const resumeDownloadName = PORTFOLIO_DATA.contact.resumeDownloadName;
-      ["nav-resume", "mobile-resume", "hero-resume"].forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.href = resumeFile;
-      });
+      const navResumeEl = document.getElementById("nav-resume");
+      if (navResumeEl) navResumeEl.href = resumeLinks.viewUrl;
       const heroResumeEl = document.getElementById("hero-resume");
-      if (heroResumeEl) heroResumeEl.setAttribute("download", resumeDownloadName);
+      if (heroResumeEl) {
+        heroResumeEl.href = resumeLinks.downloadUrl;
+        heroResumeEl.setAttribute("download", resumeDownloadName);
+      }
 
       const targetEmailEl = document.getElementById("enquiry-target-email");
       if (targetEmailEl) targetEmailEl.textContent = PORTFOLIO_DATA.contact.email;
@@ -746,6 +759,7 @@
       grid.innerHTML = filtered
         .map((project, idx) => {
           const originalIndex = PORTFOLIO_DATA.projects.indexOf(project);
+          const safeImageSrc = encodeURI((project.image || "").trim());
           return `
             <article
               onclick="openProjectModal(${originalIndex})"
@@ -754,7 +768,7 @@
               <div>
                 <div class="aspect-video w-full bg-neutral-100 border-b border-neutral-200 overflow-hidden relative">
                   <img
-                    src="${project.image}"
+                    src="${safeImageSrc}"
                     alt="${project.title}"
                     onerror="this.src='https://placehold.co/800x500/111111/FFFFFF?text=CAD+MODEL+PREVIEW'"
                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-300"
@@ -801,7 +815,7 @@
       document.getElementById("modal-software").textContent = project.software;
       document.getElementById("modal-description").textContent = project.description;
       const img = document.getElementById("modal-image");
-      img.src = project.image;
+      img.src = encodeURI((project.image || "").trim());
       img.onerror = () => {
         img.src = "https://placehold.co/800x500/111111/FFFFFF?text=CAD+MODEL+PREVIEW";
       };
@@ -846,38 +860,37 @@
     function getFormattedEnquiry() {
       const senderName = document.getElementById("enquiry-name").value.trim() || "Prospective Employer / Client";
       const senderEmail = document.getElementById("enquiry-email").value.trim() || "Not provided";
-      const enquiryType = document.getElementById("enquiry-type").value;
+      const category = document.getElementById("enquiry-type").value;
       const message = document.getElementById("enquiry-message").value.trim();
 
-      const subject = `[Portfolio Enquiry - ${enquiryType}] from ${senderName}`;
-      const body =
-        `Hello ${PORTFOLIO_DATA.profile.name},\n\n` +
-        `Enquiry Type: ${enquiryType}\n` +
-        `From: ${senderName} (${senderEmail})\n\n` +
-        `Message:\n${message}\n`;
+      const subject = `[Portfolio Enquiry - ${category}] from ${senderName}`;
+      const body = [
+        `Hello ${PORTFOLIO_DATA.profile.name},`,
+        ``,
+        `You have received a new enquiry from your Mechanical Design Portfolio:`,
+        ``,
+        `Name: ${senderName}`,
+        `Email: ${senderEmail}`,
+        `Category: ${category}`,
+        ``,
+        `Message:`,
+        `${message}`,
+      ].join("\n");
 
       return { subject, body };
     }
 
-    // Launch Default Email Client with Pre-Filled Enquiry
+    // Launch Default Email Client with Pre-filled Enquiry
     function handleEnquirySubmit(event) {
       event.preventDefault();
       const { subject, body } = getFormattedEnquiry();
-      const mailtoLink =
-        `mailto:${encodeURIComponent(PORTFOLIO_DATA.contact.email)}` +
-        `?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:${encodeURIComponent(PORTFOLIO_DATA.contact.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailtoLink;
-      showToast("Opening email client to send enquiry...");
+      showToast("Opening email client with your enquiry...");
     }
 
-    // Copy Enquiry Message to Clipboard
+    // Copy Formatted Enquiry Message to Clipboard
     function copyEnquiryMessage() {
-      const messageVal = document.getElementById("enquiry-message").value.trim();
-      if (!messageVal) {
-        showToast("Please type a message first to copy.");
-        return;
-      }
       const { subject, body } = getFormattedEnquiry();
       const fullText = `To: ${PORTFOLIO_DATA.contact.email}\nSubject: ${subject}\n\n${body}`;
       const tempArea = document.createElement("textarea");
@@ -886,35 +899,105 @@
       tempArea.select();
       document.execCommand("copy");
       document.body.removeChild(tempArea);
-      showToast("Formatted enquiry copied to clipboard!");
+      showToast("Enquiry message copied to clipboard!");
     }
 
-    // Download Complete Standalone HTML File Helper
+    // Download Complete Single-File HTML Copy
     function downloadEditableHtml() {
       const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-      const blob = new Blob([htmlContent], { type: "text/html" });
+      const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "index.html";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "index.html";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
       URL.revokeObjectURL(url);
       showToast("Downloaded editable index.html!");
     }
 
+    // Convert Google Drive share links into direct view & direct download URLs
+    function getResumeUrls(rawUrl) {
+      const trimmed = (rawUrl || "").trim();
+      const driveMatch =
+        trimmed.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/) ||
+        trimmed.match(/drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/) ||
+        trimmed.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+
+      if (driveMatch && driveMatch[1]) {
+        const fileId = driveMatch[1];
+        return {
+          isGoogleDrive: true,
+          viewUrl: `https://drive.google.com/file/d/${fileId}/view`,
+          downloadUrl: `https://drive.google.com/uc?export=download&id=${fileId}`,
+        };
+      }
+
+      const encoded = encodeURI(trimmed);
+      return {
+        isGoogleDrive: false,
+        viewUrl: encoded,
+        downloadUrl: encoded,
+      };
+    }
+
+    // Force Download PDF Resume (Handles Google Drive direct downloads & local files)
+    async function downloadResumePdf(event) {
+      if (event) event.preventDefault();
+      const { isGoogleDrive, downloadUrl, viewUrl } = getResumeUrls(PORTFOLIO_DATA.contact.resumeFile);
+      const downloadName = PORTFOLIO_DATA.contact.resumeDownloadName;
+
+      if (isGoogleDrive) {
+        if (downloadUrl.includes("YOUR_GOOGLE_DRIVE_FILE_ID")) {
+          showToast("Please paste your Google Drive link in PORTFOLIO_DATA.contact.resumeFile!");
+          return;
+        }
+        showToast("Starting Google Drive PDF download...");
+        const link = document.createElement("a");
+        link.href = downloadUrl;
+        link.setAttribute("download", downloadName);
+        link.rel = "noopener noreferrer";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        return;
+      }
+
+      showToast("Downloading resume...");
+      try {
+        const response = await fetch(downloadUrl);
+        if (!response.ok) throw new Error("Resume file not found at: " + downloadUrl);
+        const blob = await response.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = blobUrl;
+        link.download = downloadName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(blobUrl);
+        showToast("Resume downloaded!");
+      } catch (err) {
+        window.open(viewUrl, "_blank");
+      }
+    }
+
     // Open & Trigger Print Dialog for the Attached PDF Resume
     function printResumePdf() {
-      const resumePath = PORTFOLIO_DATA.contact.resumeFile;
-      const printWindow = window.open(resumePath, "_blank");
-      if (printWindow) {
+      const { isGoogleDrive, viewUrl } = getResumeUrls(PORTFOLIO_DATA.contact.resumeFile);
+      if (isGoogleDrive && viewUrl.includes("YOUR_GOOGLE_DRIVE_FILE_ID")) {
+        showToast("Please paste your Google Drive link in PORTFOLIO_DATA.contact.resumeFile!");
+        return;
+      }
+      const printWindow = window.open(viewUrl, "_blank");
+      if (printWindow && !isGoogleDrive) {
         printWindow.addEventListener("load", () => {
           printWindow.focus();
           printWindow.print();
         });
-      } else {
-        showToast("Please allow pop-ups or check your resume PDF path.");
+      } else if (!printWindow) {
+        showToast("Please allow pop-ups to open your resume PDF.");
       }
     }
 
