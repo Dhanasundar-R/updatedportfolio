@@ -137,6 +137,12 @@
             View CAD Projects &rarr;
           </a>
           <a
+            href="#contact"
+            class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-neutral-100 transition"
+          >
+            Send Enquiry
+          </a>
+          <a
             id="hero-linkedin"
             href="https://www.linkedin.com/in/your-linkedin-id"
             target="_blank"
@@ -147,12 +153,17 @@
           </a>
           <a
             id="hero-resume"
-            href="MECHANICAL ENGINEER RESUME - DHANA SUNDAR.pdf"
+            href="DHANA SUNDAR RESUME 2026 NOV.pdf"
             download="DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf"
             class="px-5 py-2.5 rounded-lg border border-black text-black text-xs font-mono uppercase tracking-wider hover:bg-black hover:text-white transition"
           >
             Download Resume (PDF) &darr;
           </a>
+          <button
+            onclick="copyEmailToClipboard()"
+            class="px-5 py-2.5 rounded-lg border border-neutral-300 text-neutral-700 text-xs font-mono uppercase tracking-wider hover:border-black hover:text-black transition"
+          >
+            Copy Email
           </button>
         </div>
       </div>
@@ -244,7 +255,7 @@
           <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight uppercase mt-1">Contact &amp; Enquiry</h2>
         </div>
         <p class="font-mono text-xs uppercase tracking-wider text-neutral-600">
-         SIVAGANGAI, TAMIL NADU
+          DIRECT RESPONSE CHANNEL // SIVAGANGAI, TAMIL NADU
         </p>
       </div>
 
@@ -329,6 +340,7 @@
                 id="enquiry-type"
                 class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-neutral-50 text-sm text-black focus:outline-none focus:border-black focus:bg-white transition"
               >
+                <option value="Job Opportunity / Recruitment">Job Opportunity / Recruitment</option>
                 <option value="Mechanical Design / CAD Project">Mechanical Design / CAD Project</option>
                 <option value="Internship / Mentorship">Internship / Mentorship</option>
                 <option value="General Enquiry">General Enquiry</option>
@@ -472,7 +484,7 @@
         email: "dhanasundar01@gmail.com",
         linkedinUrl: "https://www.linkedin.com/in/your-linkedin-id",
         linkedinLabel: "linkedin.com/in/your-linkedin-id",
-        resumeFile: "MECHANICAL ENGINEER RESUME - DHANA SUNDAR.pdf",
+        resumeFile: "DHANA SUNDAR RESUME 2026 NOV.pdf",
         resumeDownloadName: "DHANASUNDAR_Mechanical_Design_Engineer_Resume.pdf",
       },
 
@@ -611,7 +623,7 @@
       // Wire PDF Resume Links
       const resumeFile = PORTFOLIO_DATA.contact.resumeFile;
       const resumeDownloadName = PORTFOLIO_DATA.contact.resumeDownloadName;
-      ["nav-resume", "hero-resume"].forEach((id) => {
+      ["nav-resume", "mobile-resume", "hero-resume"].forEach((id) => {
         const el = document.getElementById(id);
         if (el) el.href = resumeFile;
       });
