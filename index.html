@@ -432,9 +432,34 @@
       </div>
 
       <div class="p-6 space-y-5 max-h-[80vh] overflow-y-auto">
-        <div class="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-100 overflow-hidden">
+        <div class="relative aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-100 overflow-hidden">
           <img id="modal-image" src="" alt="Project Preview" class="w-full h-full object-cover" />
+          <button
+            id="modal-prev-btn"
+            type="button"
+            onclick="stepModalImage(-1)"
+            aria-label="Previous image"
+            class="hidden absolute left-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-md bg-black/80 text-white font-mono text-xs hover:bg-black transition"
+          >
+            &larr; PREV
+          </button>
+          <button
+            id="modal-next-btn"
+            type="button"
+            onclick="stepModalImage(1)"
+            aria-label="Next image"
+            class="hidden absolute right-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-md bg-black/80 text-white font-mono text-xs hover:bg-black transition"
+          >
+            NEXT &rarr;
+          </button>
+          <span
+            id="modal-image-counter"
+            class="hidden absolute bottom-3 right-3 px-2.5 py-1 rounded bg-black/80 text-white font-mono text-[11px]"
+          ></span>
         </div>
+
+        <!-- Thumbnail strip for multiple images -->
+        <div id="modal-thumbnails" class="hidden flex gap-2.5 overflow-x-auto pb-1"></div>
 
         <div class="flex flex-wrap items-center justify-between gap-2">
           <h3 id="modal-title" class="text-xl sm:text-2xl font-bold uppercase tracking-tight"></h3>
@@ -490,13 +515,17 @@
       },
 
       // 3. PROJECTS SHOWCASE
-      // Tip: Replace `image` URLs with your own SolidWorks / AutoCAD renders (e.g., "./images/gearbox.png")
+      // Tip: Add 1 or multiple images inside `images: [ ... ]` (e.g., ["view1.png", "view2.png", "drawing.png"])
       projects: [
         {
           title: "3D Mechanical Part & Assembly Model",
           series: "SERIES 01 // SOLIDWORKS 3D CAD",
           software: "SolidWorks",
-          image: "Screenshot 2026-08-21 190412.png",
+          images: [
+            "https://placehold.co/800x500/111111/FFFFFF?text=SOLIDWORKS+ISOMETRIC+VIEW",
+            "https://placehold.co/800x500/27272A/FFFFFF?text=EXPLODED+ASSEMBLY+VIEW",
+            "https://placehold.co/800x500/3F3F46/FFFFFF?text=2D+ORTHOGRAPHIC+SHEET",
+          ],
           description:
             "Parametric 3D solid modeling and multi-part assembly created in SolidWorks with full geometric constraints, mating conditions, and exploded view documentation.",
           highlights: [
@@ -509,7 +538,10 @@
           title: "2D Engineering Layout & Orthographic Drafting",
           series: "SERIES 02 // AUTOCAD 2D DRAFTING",
           software: "AutoCAD",
-          image: "https://placehold.co/800x500/F4F4F5/111111?text=AUTOCAD+2D+ENGINEERING+DRAWING",
+          images: [
+            "https://placehold.co/800x500/F4F4F5/111111?text=AUTOCAD+2D+ENGINEERING+DRAWING",
+            "https://placehold.co/800x500/E4E4E7/111111?text=SECTIONAL+DETAIL+VIEW",
+          ],
           description:
             "Precision 2D technical drawings featuring front, top, and sectional views with standard engineering dimensioning, tolerances, and title block formatting.",
           highlights: [
@@ -522,13 +554,17 @@
           title: "Custom Mechanical Component Design (Starter Slot)",
           series: "SERIES 03 // PORTFOLIO SLOT",
           software: "SolidWorks",
-          image: "Screenshot 2026-08-26 145133.png",
+          images: [
+            "Screenshot 2026-08-26 145133.png",
+            // Add more image filenames here separated by commas, e.g.:
+            // "Screenshot 2026-08-26 145200.png",
+          ],
           description:
-            "Starter slot ready for your next SolidWorks or AutoCAD project. Edit the title, software tag, description, and image path inside PORTFOLIO_DATA in the HTML file.",
+            "Starter slot ready for your next SolidWorks or AutoCAD project. Edit the title, software tag, description, and images array inside PORTFOLIO_DATA in the HTML file.",
           highlights: [
-            "Paste your exported CAD screenshot path in the image field",
+            "Add multiple exported CAD screenshots inside the images [ ... ] list",
             "Update bullet points with material, dimensions, or design goals",
-            "Automatically appears in the filterable project grid",
+            "Automatically appears in the filterable project grid with gallery view",
           ],
         },
       ],
@@ -747,6 +783,16 @@
     }
 
     // Render Filterable Project Cards
+    function getProjectImages(project) {
+      if (Array.isArray(project.images) && project.images.length > 0) {
+        return project.images.map((src) => encodeURI((src || "").trim()));
+      }
+      if (project.image) {
+        return [encodeURI((project.image || "").trim())];
+      }
+      return ["https://placehold.co/800x500/111111/FFFFFF?text=CAD+MODEL+PREVIEW"];
+    }
+
     function renderProjects(filter) {
       const grid = document.getElementById("projects-grid");
       const filtered =
@@ -759,7 +805,12 @@
       grid.innerHTML = filtered
         .map((project, idx) => {
           const originalIndex = PORTFOLIO_DATA.projects.indexOf(project);
-          const safeImageSrc = encodeURI((project.image || "").trim());
+          const imageList = getProjectImages(project);
+          const safeImageSrc = imageList[0];
+          const photoCountBadge =
+            imageList.length > 1
+              ? `<span class="absolute bottom-3 left-3 px-2 py-0.5 rounded bg-black/85 text-white font-mono text-[10px] uppercase">${imageList.length} IMAGES</span>`
+              : "";
           return `
             <article
               onclick="openProjectModal(${originalIndex})"
@@ -776,6 +827,7 @@
                   <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-black text-white font-mono text-[11px] uppercase">
                     ${project.software}
                   </span>
+                  ${photoCountBadge}
                 </div>
                 <div class="p-5">
                   <span class="font-mono text-[11px] uppercase tracking-wider text-neutral-500">${project.series}</span>
@@ -792,21 +844,60 @@
         })
         .join("");
     }
+    // Project Modal Functions (Supports Multi-Image Gallery)
+    let activeModalImages = [];
+    let activeModalImageIndex = 0;
 
-    // Filter Button Click Handler
-    document.getElementById("project-filters").addEventListener("click", (e) => {
-      const btn = e.target.closest(".filter-btn");
-      if (!btn) return;
-      document.querySelectorAll(".filter-btn").forEach((b) => {
-        b.classList.remove("bg-black", "text-white", "border-black");
-        b.classList.add("bg-white", "text-black", "border-neutral-300");
-      });
-      btn.classList.remove("bg-white", "text-black", "border-neutral-300");
-      btn.classList.add("bg-black", "text-white", "border-black");
-      renderProjects(btn.dataset.filter);
-    });
+    function setModalActiveImage(imgIndex) {
+      if (!activeModalImages.length) return;
+      activeModalImageIndex = (imgIndex + activeModalImages.length) % activeModalImages.length;
 
-    // Project Modal Functions
+      const img = document.getElementById("modal-image");
+      img.src = activeModalImages[activeModalImageIndex];
+      img.onerror = () => {
+        img.src = "https://placehold.co/800x500/111111/FFFFFF?text=CAD+MODEL+PREVIEW";
+      };
+
+      const hasMultiple = activeModalImages.length > 1;
+      const prevBtn = document.getElementById("modal-prev-btn");
+      const nextBtn = document.getElementById("modal-next-btn");
+      const counter = document.getElementById("modal-image-counter");
+      const thumbsWrapper = document.getElementById("modal-thumbnails");
+
+      prevBtn.classList.toggle("hidden", !hasMultiple);
+      nextBtn.classList.toggle("hidden", !hasMultiple);
+      counter.classList.toggle("hidden", !hasMultiple);
+      thumbsWrapper.classList.toggle("hidden", !hasMultiple);
+
+      if (hasMultiple) {
+        counter.textContent = `${activeModalImageIndex + 1} / ${activeModalImages.length}`;
+        thumbsWrapper.innerHTML = activeModalImages
+          .map(
+            (src, i) => `
+            <button
+              type="button"
+              onclick="setModalActiveImage(${i})"
+              class="shrink-0 w-20 h-14 rounded-md overflow-hidden border-2 transition ${
+                i === activeModalImageIndex ? "border-black opacity-100" : "border-neutral-200 opacity-60 hover:opacity-100"
+              }"
+            >
+              <img
+                src="${src}"
+                alt="Thumbnail ${i + 1}"
+                onerror="this.src='https://placehold.co/200x140/111111/FFFFFF?text=IMG+${i + 1}'"
+                class="w-full h-full object-cover"
+              />
+            </button>
+          `
+          )
+          .join("");
+      }
+    }
+
+    function stepModalImage(delta) {
+      setModalActiveImage(activeModalImageIndex + delta);
+    }
+
     function openProjectModal(index) {
       const project = PORTFOLIO_DATA.projects[index];
       if (!project) return;
@@ -814,11 +905,9 @@
       document.getElementById("modal-title").textContent = project.title;
       document.getElementById("modal-software").textContent = project.software;
       document.getElementById("modal-description").textContent = project.description;
-      const img = document.getElementById("modal-image");
-      img.src = encodeURI((project.image || "").trim());
-      img.onerror = () => {
-        img.src = "https://placehold.co/800x500/111111/FFFFFF?text=CAD+MODEL+PREVIEW";
-      };
+
+      activeModalImages = getProjectImages(project);
+      setModalActiveImage(0);
 
       const highlightsList = document.getElementById("modal-highlights");
       highlightsList.innerHTML = (project.highlights || [])
